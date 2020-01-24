@@ -36,9 +36,6 @@ def apply_coupons(cart, coupons)
   while coupon_idx < coupons.size do
     cart_idx = 0
     while cart_idx < cart.size do
-      pp coupon_idx
-      pp cart_idx
-      pp cart
       if cart[cart_idx][:item] == coupons[coupon_idx][:item] 
         amount_of_item_in_cart = cart[cart_idx][:count] 
         coupon_count = coupons[coupon_idx][:num] 
