@@ -32,7 +32,7 @@ def consolidate_cart(cart)
 end
 
 #[{:item=>"BEER", :price=>13.0, :clearance=>false, :count=>3}] => cart
-#
+#[{:item=>"BEER", :num=>2, :cost=>20.0}, {:item=>"BEER", :num=>2, :cost=>20.0}]
 def apply_coupons(cart, coupons)
   coupon_idx = 0
   while coupon_idx < coupons.size do
