@@ -56,7 +56,6 @@ def apply_coupons(cart, coupons)
     coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
     coupons[coupon_idx].delete(:num) 
     coupons[coupon_idx].delete(:cost)
-    
     coupon_applied = coupons[coupon_idx]
     cart << coupon_applied
     
