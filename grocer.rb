@@ -50,7 +50,7 @@ def apply_coupons(cart, coupons)
     
     #make new coupon item in cart and apply
     coupons[coupon_idx][:item] += " W/COUPON"
-    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
+    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
     coupons[coupon_idx].delete(:num) 
     coupons[coupon_idx].delete(:cost)
     coupon_applied = coupons[coupon_idx]
