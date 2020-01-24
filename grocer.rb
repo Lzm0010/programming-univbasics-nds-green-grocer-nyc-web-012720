@@ -34,9 +34,6 @@ end
 def apply_coupons(cart, coupons)
   coupon_idx = 0
   while coupon_idx < coupons.size do
-    pp coupon_idx
-    pp cart
-    pp coupons
     cart_idx = 0
     while cart_idx < cart.size do
       pp cart_idx
