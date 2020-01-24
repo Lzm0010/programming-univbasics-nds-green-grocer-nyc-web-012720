@@ -42,7 +42,7 @@ def apply_coupons(cart, coupons)
         amount_of_item_in_cart = cart[cart_idx][:count] #3
         coupon_count = coupons[coupon_idx][:num] #2
         if amount_of_item_in_cart >= coupon_count
-          cart[cart_idx][:count] = amount_of_item_in_cart - coupon_count
+          cart[cart_idx][:count] = amount_of_item_in_cart - coupon_count #1
           coupons[coupon_idx][:count] = coupon_count
           coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
         end
