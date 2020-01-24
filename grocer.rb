@@ -54,8 +54,9 @@ def apply_coupons(cart, coupons)
     coupons[coupon_idx].delete(:num)
     coupons[coupon_idx].delete(:cost)
     
-    pp coupon_applied = coupons[coupon_idx]
+    coupon_applied = coupons[coupon_idx]
     cart << coupon_applied
+    pp coupons
     
     coupon_idx += 1
   end
