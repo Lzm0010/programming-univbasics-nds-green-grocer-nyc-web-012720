@@ -40,6 +40,9 @@ def apply_coupons(cart, coupons)
       pp cart_idx
       pp cart
       if cart[cart_idx][:item] == coupons[coupon_idx][:item] 
+        #make new coupon item in cart and apply
+    coupons[coupon_idx][:item] += " W/COUPON"
+    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
         amount_of_item_in_cart = cart[cart_idx][:count] 
         coupon_count = coupons[coupon_idx][:num] 
         if amount_of_item_in_cart >= coupon_count
@@ -51,9 +54,7 @@ def apply_coupons(cart, coupons)
       cart_idx += 1
     end
     
-    #make new coupon item in cart and apply
-    coupons[coupon_idx][:item] += " W/COUPON"
-    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
+    
     coupons[coupon_idx].delete(:num) 
     coupons[coupon_idx].delete(:cost)
     
