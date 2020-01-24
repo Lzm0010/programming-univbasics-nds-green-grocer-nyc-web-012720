@@ -32,7 +32,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  
+  cart_idx = 0
   
   
   # coupon_idx = 0
