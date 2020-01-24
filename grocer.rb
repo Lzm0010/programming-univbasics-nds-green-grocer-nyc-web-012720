@@ -32,37 +32,40 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  coupon_idx = 0
-  while coupon_idx < coupons.size do
-    cart_idx = 0
-    while cart_idx < cart.size do
-      pp cart_idx
-      pp cart
-      pp coupons
-      if cart[cart_idx][:item] == coupons[coupon_idx][:item]
-        amount_of_item_in_cart = cart[cart_idx][:count]
-        coupon_count = coupons[coupon_idx][:num]
-        if amount_of_item_in_cart >= coupon_count
-          cart[cart_idx][:count] = amount_of_item_in_cart - coupon_count
-          coupons[coupon_idx][:count] = coupon_count
-          coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
-        end
-      end
-      cart_idx += 1
-    end
+  
+  
+  
+  # coupon_idx = 0
+  # while coupon_idx < coupons.size do
+  #   cart_idx = 0
+  #   while cart_idx < cart.size do
+  #     pp cart_idx
+  #     pp cart
+  #     pp coupons
+  #     if cart[cart_idx][:item] == coupons[coupon_idx][:item]
+  #       amount_of_item_in_cart = cart[cart_idx][:count]
+  #       coupon_count = coupons[coupon_idx][:num]
+  #       if amount_of_item_in_cart >= coupon_count
+  #         cart[cart_idx][:count] = amount_of_item_in_cart - coupon_count
+  #         coupons[coupon_idx][:count] = coupon_count
+  #         coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
+  #       end
+  #     end
+  #     cart_idx += 1
+  #   end
     
-    #make new coupon item in cart and apply
-    coupons[coupon_idx][:item] += " W/COUPON"
-    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
-    coupons[coupon_idx].delete(:num)
-    coupons[coupon_idx].delete(:cost)
+  #   #make new coupon item in cart and apply
+  #   coupons[coupon_idx][:item] += " W/COUPON"
+  #   coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
+  #   coupons[coupon_idx].delete(:num)
+  #   coupons[coupon_idx].delete(:cost)
     
-    coupon_applied = coupons[coupon_idx]
-    cart << coupon_applied
+  #   coupon_applied = coupons[coupon_idx]
+  #   cart << coupon_applied
     
-    coupon_idx += 1
-  end
-  cart
+  #   coupon_idx += 1
+  # end
+  # cart
 end
 
 def apply_clearance(cart)
