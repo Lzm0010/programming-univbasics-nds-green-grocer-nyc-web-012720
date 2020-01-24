@@ -43,7 +43,7 @@ def apply_coupons(cart, coupons)
         cart_item[:count] -= coupons[coupon_idx][:num]
       else
         cart_item_with_coupon = {
-          
+          :item => coupon_item_name
         }
       end
     end
