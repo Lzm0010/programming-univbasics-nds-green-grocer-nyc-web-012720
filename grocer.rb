@@ -45,7 +45,7 @@ def apply_coupons(cart, coupons)
           coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
         end
       end
-      cart_idx += 1
+      coupon_idx += 1
     end
     
     #make new coupon item in cart and apply
