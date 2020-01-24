@@ -56,7 +56,6 @@ def apply_coupons(cart, coupons)
     
     coupon_applied = coupons[coupon_idx]
     cart << coupon_applied
-    pp coupons
     
     coupon_idx += 1
   end
