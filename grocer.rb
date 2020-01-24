@@ -32,10 +32,10 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  cart_idx = 0
-  while cart_idx < cart.size do
-    coupon_idx = 0
-    while coupon_idx < coupons.size do
+  coupon_idx = 0
+  while coupon_idx < coupons.size do
+    cart_idx = 0
+    while cart_idx < cart.size do
       if cart[cart_idx][:item] == coupons[coupon_idx][:item]
         amount_of_item_in_cart = cart[cart_idx][:count]
         coupon_count = coupons[coupon_idx][:num]
@@ -45,18 +45,19 @@ def apply_coupons(cart, coupons)
           coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
         end
       end
-      #make new coupon item in cart and apply
-      coupons[coupon_idx][:item] += " W/COUPON"
-      coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
-      coupons[coupon_idx].delete(:num)
-      coupons[coupon_idx].delete(:cost)
-    
-      coupon_applied = coupons[coupon_idx]
-      cart << coupon_applied
-      coupon_idx += 1
+      cart_idx += 1
     end
     
-    cart_idx += 1
+    #make new coupon item in cart and apply
+    coupons[coupon_idx][:item] += " W/COUPON"
+    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
+    coupons[coupon_idx].delete(:num)
+    coupons[coupon_idx].delete(:cost)
+    
+    coupon_applied = coupons[coupon_idx]
+    cart << coupon_applied
+    
+    coupon_idx += 1
   end
   cart
 end
