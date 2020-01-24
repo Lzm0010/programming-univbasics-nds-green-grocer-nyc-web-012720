@@ -32,7 +32,7 @@ def consolidate_cart(cart)
 end
 
 #[{:item=>"BEER", :price=>13.0, :clearance=>false, :count=>3},
-# {:item=>"BEER W/COUPON", :price=> 10, :clearance=>false] => cart
+# {:item=>"BEER W/COUPON", :price=> 10, :clearance=>false, :count=>2] => cart
 #[{:item=>"BEER", :num=>2, :cost=>20.0}, {:item=>"BEER", :num=>2, :cost=>20.0}]
 def apply_coupons(cart, coupons)
   coupon_idx = 0
