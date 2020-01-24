@@ -43,8 +43,8 @@ def apply_coupons(cart, coupons)
         coupon_count = coupons[coupon_idx][:num] #2
         if amount_of_item_in_cart >= coupon_count
           cart[cart_idx][:count] = amount_of_item_in_cart - coupon_count #1
-          coupons[coupon_idx][:count] = coupon_count
-          coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
+          coupons[coupon_idx][:count] = coupon_count #2
+          coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance] 
         end
       end
       cart_idx += 1
@@ -52,7 +52,7 @@ def apply_coupons(cart, coupons)
     
     #make new coupon item in cart and apply
     coupons[coupon_idx][:item] += " W/COUPON"
-    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
+    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
     coupons[coupon_idx].delete(:num)
     coupons[coupon_idx].delete(:cost)
     
