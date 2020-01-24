@@ -33,7 +33,8 @@ end
 
 #[{:item=>"BEER", :price=>13.0, :clearance=>false, :count=>1},
 # {:item=>"BEER W/COUPON", :price=> 10, :clearance=>false, :count=>2}] => cart
-#[{:item=>"BEER W/COUPON", :price=> 10, :clearance=>false, :count=>2}, {:item=>"BEER", :num=>2, :cost=>20.0}]
+#[{:item=>"BEER W/COUPON", :price=> 10, :clearance=>false, :count=>2}, 
+# {:item=>"BEER", :num=>2, :cost=>20.0}] => coupons
 def apply_coupons(cart, coupons)
   coupon_idx = 0
   while coupon_idx < coupons.size do
