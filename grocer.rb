@@ -33,7 +33,7 @@ end
 
 def apply_coupons(cart, coupons)
   cart_idx = 0
-  while cart_idx < coupons.size do
+  while cart_idx < cart.size do
     cart_idx = 0
     while cart_idx < cart.size do
       if cart[cart_idx][:item] == coupons[coupon_idx][:item]
