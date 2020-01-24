@@ -85,5 +85,9 @@ def checkout(cart, coupons)
     i += 1
   end
   
-  cart_total
+  if cart_total > 100
+    return cart_total
+  else
+    return cart_total
+  end
 end
