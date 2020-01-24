@@ -31,7 +31,8 @@ def consolidate_cart(cart)
   better_cart
 end
 
-#[{:item=>"BEER", :price=>13.0, :clearance=>false, :count=>3}] => cart
+#[{:item=>"BEER", :price=>13.0, :clearance=>false, :count=>3},
+# {:item=>"BEER W/COUPON", :price=> 10] => cart
 #[{:item=>"BEER", :num=>2, :cost=>20.0}, {:item=>"BEER", :num=>2, :cost=>20.0}]
 def apply_coupons(cart, coupons)
   coupon_idx = 0
@@ -53,7 +54,7 @@ def apply_coupons(cart, coupons)
     #make new coupon item in cart and apply
     coupons[coupon_idx][:item] += " W/COUPON"
     coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num] #10.0
-    coupons[coupon_idx].delete(:num)
+    coupons[coupon_idx].delete(:num) 
     coupons[coupon_idx].delete(:cost)
     
     coupon_applied = coupons[coupon_idx]
