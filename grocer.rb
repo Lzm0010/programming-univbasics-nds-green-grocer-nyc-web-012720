@@ -45,17 +45,16 @@ def apply_coupons(cart, coupons)
           coupons[coupon_idx][:clearance] = cart[cart_idx][:clearance]
         end
       end
+      #make new coupon item in cart and apply
+      coupons[coupon_idx][:item] += " W/COUPON"
+      coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
+      coupons[coupon_idx].delete(:num)
+      coupons[coupon_idx].delete(:cost)
+    
+      coupon_applied = coupons[coupon_idx]
+      cart << coupon_applied
       coupon_idx += 1
     end
-    
-    #make new coupon item in cart and apply
-    coupons[coupon_idx][:item] += " W/COUPON"
-    coupons[coupon_idx][:price] = coupons[coupon_idx][:cost] / coupons[coupon_idx][:num]
-    coupons[coupon_idx].delete(:num)
-    coupons[coupon_idx].delete(:cost)
-    
-    coupon_applied = coupons[coupon_idx]
-    cart << coupon_applied
     
     cart_idx += 1
   end
