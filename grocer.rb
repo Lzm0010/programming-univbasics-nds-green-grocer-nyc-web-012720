@@ -31,6 +31,7 @@ def consolidate_cart(cart)
   better_cart
 end
 
+
 def apply_coupons(cart, coupons)
   coupon_idx = 0
   while coupon_idx < coupons.size do
